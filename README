@@ -8,14 +8,14 @@
 
 ### Usage
 
-The directory of the ino file must be the same as the basename of this file
+The directory name of the ino file must be the same as the basename of this file
 in order to compile it.
 
 Run `make` to compile your files and to upload the binary to the board.
 Run `make check` to compile your files without uploading them.
 
 If you're not in the `dialout` group, you will need to execute these commands
-with sudo. Or, you can add urself to the group with the following command:
+with sudo. Or, you can add yourself to the group with the following command:
 
     `> sudo usermod -a -G dialout $USER`
 
