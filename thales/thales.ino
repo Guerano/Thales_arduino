@@ -32,7 +32,7 @@ Keypad kpd = Keypad( makeKeymap(keys), colPins, rowPins, ROWS, COLS );
 
 void setup()
 {
-    Serial.begin(115200);
+    Serial.begin(9600);
 }
 
 void loop()
