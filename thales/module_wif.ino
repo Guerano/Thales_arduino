@@ -1,6 +1,6 @@
 // This is a Wi-Fi sketch that simply get on Serial a length
 // and send the associated content via Wi-Fi.
- 
+/*
 #include <ESP8266WiFi.h>
 
 // Wi-Fi info
@@ -56,4 +56,4 @@ void loop()
   if (Serial.available() > 0)
     send_picture();
 }
-
+*/
