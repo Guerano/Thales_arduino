@@ -1,6 +1,6 @@
 // This is a Wi-Fi sketch that simply get on Serial a length
 // and send the associated content via Wi-Fi.
-/*
+
 #include <ESP8266WiFi.h>
 
 // Wi-Fi info
@@ -11,7 +11,7 @@ const char* host = "192.168.43.54";
 const int httpPort = 8000;
  
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(230400);
   delay(100);
  
   // We start by connecting to a WiFi network  
@@ -56,4 +56,3 @@ void loop()
   if (Serial.available() > 0)
     send_picture();
 }
-*/

@@ -41,18 +41,23 @@ void setup_cam()
     test_send("No camera found :(");
     return;
   }
-  // Set the picture size - you can choose one of 640x480, 320x240 or 160x120 
-  // Remember that bigger pictures take longer to transmit!
-  //cam.setImageSize(VC0706_640x480);        // biggest
-  //cam.setImageSize(VC0706_320x240);        // medium
-  cam.setImageSize(VC0706_160x120);          // small
-  ok_cam = true;
+  while (! ok_cam)
+  {
+    // Set the picture size - you can choose one of 640x480, 320x240 or 160x120 
+    // Remember that bigger pictures take longer to transmit!
+    //ok_cam = cam.setImageSize(VC0706_640x480);        // biggest
+    ok_cam = cam.setImageSize(VC0706_320x240);        // medium
+    //ok_cam = cam.setImageSize(VC0706_160x120);          // small
+  }
 }
 
 void take_picture()
 {
   if (! ok_cam)
+  {
+    test_send("Camera not up!");
     return;
+  }
 
   if (! cam.takePicture()) 
   {
@@ -95,7 +100,7 @@ void test_send(String str)
 LiquidCrystal_PCF8574 lcd(LCD_ADDRESS); // set the LCD  address to 0x27 for a 16 chars and 2 lines display
 
 char input[16] = { 0 };
-char flags[] = "1234567890";
+char flags[] = "713705";
 int curr = 0;
 
 void setup_lcd()
@@ -106,7 +111,7 @@ void setup_lcd()
   */
   lcd.begin(16, 2);
   lcd.setBacklight(255);
-    setup_enter_password();
+  setup_enter_password();
 }
 
 void setup_enter_password()
@@ -126,7 +131,8 @@ int check_password()
   lcd.noBlink();
   lcd.clear();
   lcd.setCursor(0,0);
-  lcd.print("Verifying");
+  lcd.print("Verifying...");
+  delay(1000);
   int i = 0;
   for (i = 0; flags[i] && input[i]; ++i)
     if (flags[i] != input[i])
@@ -200,15 +206,15 @@ void setup() {
   // It will be turned off at the end of the sending.
   pinMode(myled, OUTPUT);
   
-  Serial.begin(115200);
+  Serial.begin(230400);
   /* If you just wanted to test
   test_send("Hello World!);
   delay(1000);
   digitalWrite(myled, LOW);
   return;
   */
-  setup_cam();
   setup_lcd();
+  setup_cam();
 
   // Setup button (FIXME, should use keypad)
   pinMode(butt, INPUT);
