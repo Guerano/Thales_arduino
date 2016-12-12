@@ -1,0 +1,37 @@
+body
+{
+  font-family: Calibri;
+  color: white;
+  background-color: #152935;
+  margin: 0;
+}
+
+.flexbox
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.flexbox > *
+{
+  padding: 20px 30px;
+  margin: 5px;
+  border-radius: 3px;
+  background-color: rgba(119,136,153,0.8);
+  transition: 0.5s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+#particles
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}

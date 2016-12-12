@@ -1,0 +1,22 @@
+{
+  "name": "grizzzly",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Quentin L'Hours"
+  ],
+  "license": "BSD",
+  "homepage": "localhost:8080",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "particles.js": "^2.0.0"
+  }
+}
